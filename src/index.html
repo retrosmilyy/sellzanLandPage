@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="">
+</head>
+
+<body class="text-white font-sans">
+    <!-- navbar -->
+    <nav class="bg-white border-b border-gray-200 px-3 py-3 md:px-8 h-22">
+        <div class="flex items-center justify-between">
+            <!-- logo -->
+
+            <div class="text-xl font-bold text-purple-600 pt-4 pl-70">Sellzan</div>
+
+            <!-- humberger -->
+            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- nav links(desktop) -->
+            <div id="menu" class="hidden md:flex space-x-6 text-grey-700 font-medium pt-4 pr-70 text-purple-600">
+                <a href="#" class="hover:text-purple-600">Home</a>
+                <a href="#" class="hover:text-purple-600">Contact</a>
+                <a href="#" class="hover:text-purple-600">About</a>
+                <a href="#" class="hover:text-purple-600">Features</a>
+            </div>
+
+            <!-- nav link(mobile dropdown) -->
+
+            <div id="mobile-menu" class="md:hidden hidden mt-3     space-y-2 text-gray-700 font-medium" <a href="#"
+                class="hover:text-purple-600">Home</a>
+                <a href="#" class="hover:text-purple-600">Contact</a>
+                <a href="#" class="hover:text-purple-600">About</a>
+                <a href="#" class="hover:text-purple-600">Features</a>
+            </div>
+    </nav>
+
+    <section class="bg-[#FFE9D6] flex h-200 items-center justify-center">
+        <div
+            class="bg-blue-600 h-150 w-350  text-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+
+            <!-- 📝 Text -->
+            <div class="md:w-1/2 space-y-4 pl-20">
+                <h2 class="text-2xl font-bold ">Box Title</h2>
+                <p>This is a simple box using Tailwind CSS.</p>
+                <p class="bg-white text-blue-600 inline-block px-4 py-1 rounded-full text-sm">Available on</p>
+            </div>
+
+      
+            <div class="md:w-1/2">
+                <img src="https://ouch-cdn2.icons8.com/QOFO6_yY8MzVi2CSvSMa_Rml7i-2ra6SKRHzjQSwDPo/rs:fit:368:386/czM6Ly9pY29uczgvZXNzZW50aWFscy9wbmcvMjkzL2I4YmEyN2FkLTk4YzItNDJhMy1iZTcwLTQwMTViODAzYjhhZC5wbmc.png"
+                    alt="3D Illustration" class="w-full max-w-sm mx-auto" />
+            </div>
+
+        </div>
+
+
+    </section>
+  <section class="h-[800px] flex items-center justify-center px-6">
+    <div class="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-10 max-w-5xl w-full shadow-lg">
+      <h2 class="text-4xl font-bold mb-4"></h2>
+      <p class="text-white/80"></p>
+    </div>
+  </section>
+
+
+
+
+
+
+    <script src="src/main.js" defer></script>
+</body>
+
+</html>
