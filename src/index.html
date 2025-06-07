@@ -1485,6 +1485,43 @@
         </div>
     </footer>
     <script>
+        const toggleBtn = document.getElementById('mobile-menu-btn');
+        const dropDown = document.getElementById('mobile-menu');
+
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+            dropDown.classList.remove('hidden');   
+
+        });
+
+        window.addEventListener('click', () => {
+            dropDown.classList.add('hidden');
+
+
+        });
+
+        // prevents dropdown from closing if you click inside
+        dropDown.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+
+
+
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
       let index = 0;
       function moveSlide(direction) {
         const slider = document.getElementById("testimonial-slider");
