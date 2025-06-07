@@ -400,116 +400,102 @@
           transform: translateY(-10px);
         }
       }
+
+   
+
+  
+    
     </style>
   </head>
 
   <body class="font-sans antialiased">
-    <!-- Navigation -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300"
-      id="navbar"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <h1
-              class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
-            >
-              Sellzan
-            </h1>
-          </div>
+      <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                
+            
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                        Sellzan
+                    </h1>
+                </div>
 
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex space-x-8">
-            <a
-              href="#home"
-              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
-            >
-              Home
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-            <a
-              href="#features"
-              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
-            >
-              Features
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-            <a
-              href="#about"
-              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
-            >
-              About
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-            <a
-              href="#contact"
-              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
-            >
-              Contact
-              <span
-                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-          </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Home</a>
+                    <a href="#features" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Features</a>
+                    <a href="#about" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Contact</a>
+                </div>
 
-          <!-- Mobile menu button -->
-          <button
-            class="md:hidden p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-200"
-            id="mobile-menu-btn"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+                <!-- Mobile Menu Button -->
+                <button
+                    class="md:hidden p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-200"
+                    id="mobile-menu-btn"
+                    aria-label="Toggle mobile menu"
+                >
+                    <!-- Hamburger Icon -->
+                    <svg
+                        class="w-6 h-6 transition-transform duration-200"
+                        id="hamburger-icon"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                    
+                    <!-- Close Icon (Hidden by default) -->
+                    <svg
+                        class="w-6 h-6 hidden transition-transform duration-200"
+                        id="close-icon"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div 
+                class="md:hidden hidden transform transition-all duration-300 ease-in-out absolute sm:absolute w-[399px]" 
+                id="mobile-menu"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2 border border-gray-100">
+                    <a
+                        href="#home"
+                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+                    >Home</a>
+                    <a
+                        href="#features"
+                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+                    >Features</a>
+                    <a
+                        href="#about"
+                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+                    >About</a>
+                    <a
+                        href="#contact"
+                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+                    >Contact</a>
+                </div>
+            </div>
         </div>
-
-        <!-- Mobile Navigation -->
-        <div class="md:hidden hidden" id="mobile-menu">
-          <div
-            class="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2"
-          >
-            <a
-              href="#home"
-              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-              >Home</a
-            >
-            <a
-              href="#features"
-              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-              >Features</a
-            >
-            <a
-              href="#about"
-              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-              >About</a
-            >
-            <a
-              href="#contact"
-              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-              >Contact</a
-            >
-          </div>
-        </div>
-      </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section
@@ -1485,28 +1471,96 @@
         </div>
     </footer>
     <script>
-        const toggleBtn = document.getElementById('mobile-menu-btn');
-        const dropDown = document.getElementById('mobile-menu');
+         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
 
-        toggleBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-            dropDown.classList.remove('hidden');   
+        // Track menu state
+        let isMenuOpen = false;
 
+        // Toggle menu function
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('opacity-0', 'scale-95');
+                
+                // Force reflow for animation
+                mobileMenu.offsetHeight;
+                
+                // Animate in
+                mobileMenu.classList.remove('opacity-0', 'scale-95');
+                mobileMenu.classList.add('opacity-100', 'scale-100');
+                
+                // Switch icons
+                hamburgerIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                
+                // Add rotation effect
+                mobileMenuBtn.classList.add('rotate-180');
+            } else {
+                // Hide menu
+                mobileMenu.classList.remove('opacity-100', 'scale-100');
+                mobileMenu.classList.add('opacity-0', 'scale-95');
+                
+                // Hide after animation completes
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                
+                // Switch icons
+                closeIcon.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                
+                // Remove rotation effect
+                mobileMenuBtn.classList.remove('rotate-180');
+            }
+        }
+
+        // Add click event listener to button
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when clicking on menu items (optional)
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMobileMenu();
+                }
+            });
         });
 
-        window.addEventListener('click', () => {
-            dropDown.classList.add('hidden');
-
-
+        // Close menu when clicking outside 
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && 
+                !mobileMenu.contains(event.target) && 
+                !mobileMenuBtn.contains(event.target)) {
+                toggleMobileMenu();
+            }
         });
 
-        // prevents dropdown from closing if you click inside
-        dropDown.addEventListener('click', (e) => {
-            e.stopPropagation();
+  
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && isMenuOpen) {
+                toggleMobileMenu();
+            }
         });
 
-
-
+        // Handle window resize - close menu if switching to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && isMenuOpen) {
+                // Reset to closed state without animation
+                isMenuOpen = false;
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('opacity-100', 'scale-100');
+                closeIcon.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                mobileMenuBtn.classList.remove('rotate-180');
+            }
+        });
 
     
 
