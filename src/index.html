@@ -1,80 +1,1583 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="">
-</head>
+    <title>Sellzan - Modern Payment Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "float-delayed": "float 6s ease-in-out infinite 2s",
+              "pulse-glow": "pulse-glow 2s ease-in-out infinite alternate",
+              "gradient-x": "gradient-x 15s ease infinite",
+              "bounce-slow": "bounce 3s infinite",
+            },
+            backgroundImage: {
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+              "mesh-gradient":
+                "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
 
-<body class="text-white font-sans">
-    <!-- navbar -->
-    <nav class="bg-white border-b border-gray-200 px-3 py-3 md:px-8 h-22">
-        <div class="flex items-center justify-between">
-            <!-- logo -->
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
 
-            <div class="text-xl font-bold text-purple-600 pt-4 pl-70">Sellzan</div>
+      @keyframes pulse-glow {
+        0% {
+          box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
 
-            <!-- humberger -->
-            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+        100% {
+          box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+        }
+      }
 
-            <!-- nav links(desktop) -->
-            <div id="menu" class="hidden md:flex space-x-6 text-grey-700 font-medium pt-4 pr-70 text-purple-600">
-                <a href="#" class="hover:text-purple-600">Home</a>
-                <a href="#" class="hover:text-purple-600">Contact</a>
-                <a href="#" class="hover:text-purple-600">About</a>
-                <a href="#" class="hover:text-purple-600">Features</a>
-            </div>
+      @keyframes gradient-x {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
 
-            <!-- nav link(mobile dropdown) -->
+        50% {
+          background-position: 100% 50%;
+        }
+      }
 
-            <div id="mobile-menu" class="md:hidden hidden mt-3     space-y-2 text-gray-700 font-medium" <a href="#"
-                class="hover:text-purple-600">Home</a>
-                <a href="#" class="hover:text-purple-600">Contact</a>
-                <a href="#" class="hover:text-purple-600">About</a>
-                <a href="#" class="hover:text-purple-600">Features</a>
-            </div>
-    </nav>
+      .moving-bg {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient-x 15s ease infinite;
+      }
 
-    <section class="bg-[#FFE9D6] flex h-200 items-center justify-center">
-        <div
-            class="bg-blue-600 h-150 w-350  text-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+      /* boxes */
 
-            <!-- 📝 Text -->
-            <div class="md:w-1/2 space-y-4 pl-20">
-                <h2 class="text-2xl font-bold ">Box Title</h2>
-                <p>This is a simple box using Tailwind CSS.</p>
-                <p class="bg-white text-blue-600 inline-block px-4 py-1 rounded-full text-sm">Available on</p>
-            </div>
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
 
-      
-            <div class="md:w-1/2">
-                <img src="https://ouch-cdn2.icons8.com/QOFO6_yY8MzVi2CSvSMa_Rml7i-2ra6SKRHzjQSwDPo/rs:fit:368:386/czM6Ly9pY29uczgvZXNzZW50aWFscy9wbmcvMjkzL2I4YmEyN2FkLTk4YzItNDJhMy1iZTcwLTQwMTViODAzYjhhZC5wbmc.png"
-                    alt="3D Illustration" class="w-full max-w-sm mx-auto" />
-            </div>
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
 
+      .card-hover:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .gradient-box-1 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+      }
+
+      .gradient-box-2 {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        box-shadow: 0 10px 40px rgba(240, 147, 251, 0.4);
+      }
+
+      .gradient-box-3 {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        box-shadow: 0 10px 40px rgba(79, 172, 254, 0.4);
+      }
+
+      .gradient-box-4 {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        box-shadow: 0 10px 40px rgba(67, 233, 123, 0.4);
+      }
+
+      .gradient-box-5 {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        box-shadow: 0 10px 40px rgba(250, 112, 154, 0.4);
+      }
+
+      .gradient-box-6 {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        box-shadow: 0 10px 40px rgba(168, 237, 234, 0.4);
+      }
+
+      .gradient-box-1:hover {
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.6);
+      }
+
+      .gradient-box-2:hover {
+        box-shadow: 0 20px 60px rgba(240, 147, 251, 0.6);
+      }
+
+      .gradient-box-3:hover {
+        box-shadow: 0 20px 60px rgba(79, 172, 254, 0.6);
+      }
+
+      .gradient-box-4:hover {
+        box-shadow: 0 20px 60px rgba(67, 233, 123, 0.6);
+      }
+
+      .gradient-box-5:hover {
+        box-shadow: 0 20px 60px rgba(250, 112, 154, 0.6);
+      }
+
+      .gradient-box-6:hover {
+        box-shadow: 0 20px 60px rgba(168, 237, 234, 0.6);
+      }
+
+      .icon-bounce {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(-10px);
+        }
+
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .feature-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.8s;
+      }
+
+      .feature-card:hover::before {
+        left: 100%;
+      }
+
+      /* first section bg */
+      .hero-pattern {
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(255, 255, 255, 0.15) 1px,
+          transparent 0
+        );
+        background-size: 20px 20px;
+      }
+
+      /* comment section css */
+
+      .carousel-container {
+        width: 350px;
+        height: 350px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .image-item {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+        border: 4px solid white;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .image-item.active {
+        width: 120px;
+        height: 120px;
+        border: 5px solid #667eea;
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.3);
+        z-index: 10;
+      }
+
+      .image-item img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .review-container {
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 4rem;
+        position: relative;
+      }
+
+      .review-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-in-out;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .review-text.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .image-item.active {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      /* items showcasing */
+
+      .floating-item {
+        animation: float 8s ease-in-out infinite;
+        position: absolute;
+      }
+
+      .floating-item:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .floating-item:nth-child(2) {
+        animation-delay: -2s;
+      }
+
+      .floating-item:nth-child(3) {
+        animation-delay: -4s;
+      }
+
+      .floating-item:nth-child(4) {
+        animation-delay: -6s;
+      }
+
+      .floating-item:nth-child(5) {
+        animation-delay: -1s;
+      }
+
+      .floating-item:nth-child(6) {
+        animation-delay: -3s;
+      }
+
+      .floating-item:nth-child(7) {
+        animation-delay: -5s;
+      }
+
+      .floating-item:nth-child(8) {
+        animation-delay: -7s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) translateX(0px) rotate(0deg);
+          opacity: 0.7;
+        }
+
+        25% {
+          transform: translateY(-30px) translateX(10px) rotate(2deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-20px) translateX(-5px) rotate(-1deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-40px) translateX(15px) rotate(1deg);
+          opacity: 0.9;
+        }
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #1d4ed8 50%,
+          #1e40af 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .pulse-glow {
+        animation: pulse-glow 2s infinite;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        50% {
+          box-shadow: 0 0 40px rgba(59, 130, 246, 0.6),
+            0 0 60px rgba(14, 165, 233, 0.3);
+        }
+      }
+
+      .app-mockup {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border: 8px solid #1f2937;
+        border-radius: 40px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      }
+
+      .rotate-slow {
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .bounce-gentle {
+        animation: bounce-gentle 3s ease-in-out infinite;
+      }
+
+      @keyframes bounce-gentle {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <h1
+              class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+            >
+              Sellzan
+            </h1>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
+            >
+              Home
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#features"
+              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
+            >
+              Features
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
+            >
+              About
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group"
+            >
+              Contact
+              <span
+                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            class="md:hidden p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-200"
+            id="mobile-menu-btn"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
 
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2"
+          >
+            <a
+              href="#home"
+              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >Home</a
+            >
+            <a
+              href="#features"
+              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >Features</a
+            >
+            <a
+              href="#about"
+              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >About</a
+            >
+            <a
+              href="#contact"
+              class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-16 hero-pattern"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Text Content -->
+          <div class="space-y-8">
+            <div class="space-y-6">
+              <h1
+                class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-shadow"
+              >
+                The Future Of
+                <span
+                  class="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+                >
+                  Social Commerce Resolution
+                </span>
+              </h1>
+              <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                Manage your business, connect with customers, and shop your favorite products—all in one app. Sellzan makes e-commerce simple, social, and secure for everyone.
+              </p>
+            </div>
+
+            <!-- App Store Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div class="glassmorphism rounded-2xl p-1 bg-white/50">
+                <button
+                  class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                >
+                  Download for iOS
+                </button>
+              </div>
+              <div class="glassmorphism rounded-2xl p-1 bg-white/50">
+                <button
+                  class="w-full bg-white text-gray-800 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg border"
+                >
+                  Get on Android
+                </button>
+              </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="flex items-center space-x-6 pt-8">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900">50K+</div>
+                <div class="text-sm text-gray-600">Early Signups</div>
+              </div>
+              <div class="w-px h-12 bg-gray-300"></div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900">100+</div>
+                <div class="text-sm text-gray-600">Beta Testers</div>
+              </div>
+              <div class="w-px h-12 bg-gray-300"></div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-gray-900">2025</div>
+                <div class="text-sm text-gray-600">Launch Year</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="relative flex justify-center lg:justify-end">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full blur-3xl opacity-30 animate-pulse"
+              ></div>
+              <img
+                src="https://ouch-cdn2.icons8.com/QOFO6_yY8MzVi2CSvSMa_Rml7i-2ra6SKRHzjQSwDPo/rs:fit:368:386/czM6Ly9pY29uczgvZXNzZW50aWFscy9wbmcvMjkzL2I4YmEyN2FkLTk4YzItNDJhMy1iZTcwLTQwMTViODAzYjhhZC5wbmc.png"
+                alt="Mobile App Illustration"
+                class="relative w-80 lg:w-96 animate-float z-10"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-  <section class="h-[800px] flex items-center justify-center px-6">
-    <div class="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-10 max-w-5xl w-full shadow-lg">
-      <h2 class="text-4xl font-bold mb-4"></h2>
-      <p class="text-white/80"></p>
-    </div>
-  </section>
 
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-shadow"
+          >
+            Why Choose Sellzan?
+          </h2>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Discover the powerful features that make Sellzan the preferred
+            choice for millions of users worldwide
+          </p>
+        </div>
 
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1: Send Money -->
+          <div
+            class="gradient-box-1 rounded-3xl p-8 card-hover group feature-card"
+          >
+            <div
+              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Social Integrations
+            </h3>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Build your online presence with likes, comments, and followers, to
+              help grow your brand whileyou sell.
+            </p>
+            <div
+              class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+            >
+              Available in 50+ countries
+            </div>
+          </div>
 
+          <!-- Feature 2: Multi-Currency -->
+          <div
+            class="gradient-box-2 rounded-3xl p-8 card-hover group feature-card"
+          >
+            <div
+              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Multi-Currency Wallet
+            </h3>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Hold and exchange multiple currencies with real-time rates.
+              Complete transparency, no hidden fees.
+            </p>
+            <div
+              class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+            >
+              25+ supported currencies
+            </div>
+          </div>
 
+          <!-- Feature 3: Security -->
+          <div
+            class="gradient-box-3 rounded-3xl p-8 card-hover group feature-card"
+          >
+            <div
+              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Bank-Level Security
+            </h3>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Your money and data are protected with enterprise-grade security
+              and military-grade encryption.
+            </p>
+            <div
+              class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+            >
+              ISO 27001 Certified
+            </div>
+          </div>
 
+          <!-- Feature 4: Support -->
+          <div
+            class="gradient-box-4 rounded-3xl p-8 card-hover group feature-card"
+          >
+            <div
+              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">
+              24/7 Expert Support
+            </h3>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Get instant help from our dedicated support team through multiple
+              channels whenever you need it.
+            </p>
+            <div
+              class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+            >
+              Average response: 30 seconds
+            </div>
+          </div>
 
-    <script src="src/main.js" defer></script>
-</body>
+          <!-- Feature 5: Business -->
+          <div
+            class="gradient-box-5 rounded-3xl p-8 card-hover group feature-card"
+          >
+            <div
+              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Business Solutions
+            </h3>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Scale your business globally with our comprehensive API, bulk
+              payments, and corporate accounts.
+            </p>
+            <div
+              class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+            >
+              Enterprise-ready API
+            </div>
+          </div>
 
+          <!-- Feature 6: Mobile -->
+          <div
+            class="gradient-box-6 rounded-3xl p-8 card-hover group feature-card"
+          >
+            <div
+              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+            >
+              <svg
+                class="w-8 h-8 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-700 mb-4">
+              Award-Winning App
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Download our intuitive mobile app for iOS and Android. Manage your
+              finances on the go with ease.
+            </p>
+            <div
+              class="inline-flex bg-gray-700/20 text-gray-700 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+            >
+              4.9★ Store Rating
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#F8F8FF] py-20 px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 text-gray-900">
+          What our users say
+        </h2>
+
+        <!-- Circular Image Carousel -->
+        <div class="carousel-container">
+          <div
+            class="image-item active"
+            data-index="0"
+            style="top: 10px; left: 50%; transform: translateX(-50%)"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Ama Boateng"
+            />
+          </div>
+
+          <div
+            class="image-item"
+            data-index="1"
+            style="top: 50%; right: 10px; transform: translateY(-50%)"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Kwame Mensah"
+            />
+          </div>
+
+          <div
+            class="image-item"
+            data-index="2"
+            style="bottom: 10px; left: 50%; transform: translateX(-50%)"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/65.jpg"
+              alt="Efua Asante"
+            />
+          </div>
+
+          <div
+            class="image-item"
+            data-index="3"
+            style="top: 50%; left: 10px; transform: translateY(-50%)"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/18.jpg"
+              alt="Joseph Osei"
+            />
+          </div>
+        </div>
+
+        <!-- Review Container -->
+        <div class="review-container">
+          <div class="review-text show" data-review="0">
+            <p class="text-xl text-gray-800 leading-relaxed mb-4">
+              "SellZan has completely changed how I interact with my
+              customers."
+            </p>
+            <div class="text-gray-600 font-medium text-lg">
+              Ama Boateng, Accra, Ghana
+            </div>
+          </div>
+
+          <div class="review-text" data-review="1">
+            <p class="text-xl text-gray-800 leading-relaxed mb-4">
+              "Absolutely love the smooth interface. Customer service is also
+              top-notch!"
+            </p>
+            <div class="text-gray-600 font-medium text-lg">
+              Kwame Mensah, Kumasi, Ghana
+            </div>
+          </div>
+
+          <div class="review-text" data-review="2">
+            <p class="text-xl text-gray-800 leading-relaxed mb-4">
+              "It has saved me so much time and money. I tell all my friends
+              about it."
+            </p>
+            <div class="text-gray-600 font-medium text-lg">
+              Efua Asante, Techiman, Ghana
+            </div>
+          </div>
+
+          <div class="review-text" data-review="3">
+            <p class="text-xl text-gray-800 leading-relaxed mb-4">
+              "The live selling feature made huge difference in building trust
+              and driving sales in real time!👍"
+            </p>
+            <div class="text-gray-600 font-medium text-lg">
+              Joseph Osei, Tamale, Ghana
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Text Content -->
+          <div class="space-y-8">
+            <div class="space-y-6">
+              <h2
+                class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              >
+                Built for the
+                <span
+                  class="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+                >
+                  Next Generation
+                </span>
+              </h2>
+              <p class="text-xl text-gray-600 leading-relaxed">
+                This platform ensures secure transactions and meaningful
+                interactions, built for everyone from solo entrepreneurs and
+                established brands to students and aspiring sellers.
+              </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-8">
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-gray-900 mb-2">2025</div>
+                <div class="text-gray-600">Founded</div>
+              </div>
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-gray-900 mb-2">UCC</div>
+                <div class="text-gray-600">Campus</div>
+              </div>
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-gray-900 mb-2">1M+</div>
+                <div class="text-gray-600">Students</div>
+              </div>
+              <div class="text-center lg:text-left">
+                <div class="text-3xl font-bold text-gray-900 mb-2">1K+</div>
+                <div class="text-gray-600">Sellers</div>
+              </div>
+            </div>
+
+            <!-- Mission -->
+            <div class="glassmorphism rounded-2xl p-8 bg-white/60">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p class="text-gray-700 leading-relaxed">
+                To solve the problem of untrusted and unstructured online
+                marketing, allowing you to buy, sell, and connect safely.
+              </p>
+            </div>
+          </div>
+
+          <!-- Visual Content -->
+          <div class="relative">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="space-y-6">
+                <div
+                  class="glassmorphism rounded-2xl p-6 bg-gradient-to-br from-purple-100 to-blue-100 card-hover"
+                >
+                  <div
+                    class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Lightning Fast
+                  </h4>
+                  <p class="text-sm text-gray-600">Delivery Services</p>
+                </div>
+                <div
+                  class="glassmorphism rounded-2xl p-6 bg-gradient-to-br from-green-100 to-emerald-100 card-hover"
+                >
+                  <div
+                    class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Ultra Secure</h4>
+                  <p class="text-sm text-gray-600">Transactions</p>
+                </div>
+              </div>
+              <div class="space-y-6 pt-12">
+                <div
+                  class="glassmorphism rounded-2xl p-6 bg-gradient-to-br from-blue-100 to-cyan-100 card-hover"
+                >
+                  <div
+                    class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945"
+                      />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-gray-900 mb-2">
+                    Pocket Marketing
+                  </h4>
+                  <p class="text-sm text-gray-600">Anytime, anywhere!</p>
+                </div>
+                <div
+                  class="glassmorphism rounded-2xl p-6 bg-gradient-to-br from-pink-100 to-rose-100 card-hover"
+                >
+                  <div
+                    class="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 class="font-semibold text-gray-900 mb-2">User-Centric</h4>
+                  <p class="text-sm text-gray-600">Built for your needs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white relative overflow-hidden min-h-screen">
+      <!-- Floating Product Items -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Shirts -->
+        <div
+          class="floating-item top-20 left-16 w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-12 h-12 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16 4h2.5c1.1 0 2 .9 2 2v2.5h-1.5V6.5h-1V8H16V4zM8 4v4H6V6.5h-1V8.5H3.5V6c0-1.1.9-2 2-2H8zm8 16v-4h2v1.5h1v-2.5h1.5V18c0 1.1-.9 2-2 2H16zm-8 0H5.5c-1.1 0-2-.9-2-2v-2.5H5V17h1v-1.5h2V20z"
+            />
+          </svg>
+        </div>
+
+        <!-- Shoes -->
+        <div
+          class="floating-item top-32 right-20 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-14 h-14 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M2 18h20v2H2v-2zM4 16h16l-2-6H10L8 6H4v10zm5.5-7h5l1.33 4H8.17L9.5 9z"
+            />
+          </svg>
+        </div>
+
+        <!-- Perfume -->
+        <div
+          class="floating-item top-16 left-1/2 w-18 h-18 bg-gradient-to-br from-pink-400 to-rose-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-10 h-10 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l3 3v3h4v12H5V8h4V5l3-3zm1 14v-2h-2v2h2zm0-4V8H11v4h2z"
+            />
+          </svg>
+        </div>
+
+        <!-- Watch -->
+        <div
+          class="floating-item top-40 left-1/3 w-22 h-22 bg-gradient-to-br from-gray-400 to-gray-700 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-12 h-12 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"
+            />
+          </svg>
+        </div>
+
+        <!-- Sunglasses -->
+        <div
+          class="floating-item bottom-32 left-20 w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-12 h-12 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 4C7 4 2.73 7.11 1 11.5 2.73 16.89 7 20 12 20s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+            />
+          </svg>
+        </div>
+
+        <!-- Bag -->
+        <div
+          class="floating-item bottom-40 right-16 w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-14 h-14 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 15a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v12z"
+            />
+          </svg>
+        </div>
+
+        <!-- Jacket -->
+        <div
+          class="floating-item bottom-20 left-1/2 w-20 h-20 bg-gradient-to-br from-indigo-400 to-blue-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-12 h-12 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2l3 3h6v16H3V5h6l3-3zm0 2.83L10.83 6H5v12h14V6h-5.83L12 4.83z"
+            />
+          </svg>
+        </div>
+
+        <!-- Headphones -->
+        <div
+          class="floating-item top-60 right-1/3 w-22 h-22 bg-gradient-to-br from-teal-400 to-cyan-600 rounded-2xl flex items-center justify-center"
+        >
+          <svg
+            class="w-12 h-12 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C7.03 2 3 6.03 3 11v8c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5.5v-2c0-3.58 2.92-6.5 6.5-6.5s6.5 2.92 6.5 6.5v2H17c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-8c0-4.97-4.03-9-9-9z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          <!-- Left Content -->
+          <div class="space-y-8">
+            <div>
+              <h1
+                class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight leading-tight"
+              >
+                Everything You Want,
+                <span class="gradient-text block">One App Away</span>
+              </h1>
+              <p class="text-xl text-gray-600 leading-relaxed mb-8">
+                From premium fashion to luxury accessories, SellZan brings you
+                thousands of products at your fingertips. Shop anytime, anywhere
+                with our mobile app.
+              </p>
+            </div>
+
+            <!-- Features List -->
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700"
+                  >Thousands of premium products</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700"
+                  >Fast & secure checkout</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700"
+                  >Free shipping on orders over $50</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">24/7 customer support</span>
+              </div>
+            </div>
+
+            <!-- App Store Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-8">
+              <button
+                class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center space-x-3 transition-all duration-300 transform hover:scale-105 bounce-gentle"
+              >
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.4-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                  />
+                </svg>
+                <div class="text-left">
+                  <div class="text-xs">Download on the</div>
+                  <div class="text-lg font-semibold">App Store</div>
+                </div>
+              </button>
+
+              <button
+                class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center space-x-3 transition-all duration-300 transform hover:scale-105"
+              >
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+                  />
+                </svg>
+                <div class="text-left">
+                  <div class="text-xs">Get it on</div>
+                  <div class="text-lg font-semibold">Google Play</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Side - Phone Mockup -->
+          <div class="flex justify-center lg:justify-end">
+            <div
+              class="app-mockup w-80 h-96 flex items-center justify-center relative"
+            >
+              <!-- Phone Screen Content -->
+              <div
+                class="w-full h-full p-8 flex flex-col items-center justify-center text-center"
+              >
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mb-6 rotate-slow"
+                >
+                  <svg
+                    class="w-10 h-10 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">SellZan</h3>
+                <p class="text-gray-600 text-sm mb-6">Your Shopping Universe</p>
+                <div class="space-y-2 w-full">
+                  <div class="h-2 bg-gray-200 rounded-full"></div>
+                  <div class="h-2 bg-gray-200 rounded-full w-3/4"></div>
+                  <div class="h-2 bg-blue-300 rounded-full w-1/2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile: 2 columns, Tablet: 2 columns, Desktop: 5 columns -->
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
+                
+                <!-- Company Info - Full width on mobile -->
+                <div class="col-span-2 lg:col-span-1 space-y-4 sm:space-y-6">
+                    <h3 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                        Sellzan
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Get Busy, Get Social!
+                    </p>
+                    <!-- Social icons - horizontal layout on mobile -->
+                    <div class="flex space-x-3 sm:space-x-4">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-purple-600 rounded-lg flex items-center justify-center hover:bg-purple-700 transition-colors cursor-pointer">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </div>
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z" />
+                            </svg>
+                        </div>
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors cursor-pointer">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.749.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-base sm:text-lg font-semibold text-white">Quick Links</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Home</a></li>
+                        <li><a href="#features" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Features</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-base sm:text-lg font-semibold text-white">Support</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Help Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Security</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">API Docs</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Status</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Community</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-base sm:text-lg font-semibold text-white">Legal</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Compliance</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Licenses</a></li>
+                    </ul>
+                </div>
+
+                <!-- About Team -->
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-base sm:text-lg font-semibold text-white">About Team</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Our Story</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Meet the Team</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Press & Media</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm sm:text-base block">Mission</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom section with copyright -->
+            <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <p class="text-gray-400 text-sm text-center sm:text-left">
+                        © 2025 Sellzan. All rights reserved.
+                    </p>
+                    <div class="flex space-x-4 sm:space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Privacy</a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Terms</a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+      let index = 0;
+      function moveSlide(direction) {
+        const slider = document.getElementById("testimonial-slider");
+        const totalItems = slider.children.length;
+        index = (index + direction + totalItems) % totalItems;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      //comment section
+      class CircularCarousel {
+        constructor() {
+          this.currentIndex = 0;
+          this.images = document.querySelectorAll(".image-item");
+          this.reviews = document.querySelectorAll(".review-text");
+          this.totalItems = this.images.length;
+          this.intervalDuration = 5000;
+          this.slideInterval = null;
+
+          // Define circular positions with smoother curves
+          this.positions = [
+            { top: "10px", left: "50%", transform: "translateX(-50%)" }, // top
+            { top: "50%", right: "10px", transform: "translateY(-50%)" }, // right
+            { bottom: "10px", left: "50%", transform: "translateX(-50%)" }, // bottom
+            { top: "50%", left: "10px", transform: "translateY(-50%)" }, // left
+          ];
+
+          this.init();
+        }
+
+        init() {
+          // Add click listeners to images
+          this.images.forEach((img, index) => {
+            img.addEventListener("click", () => this.goToSlide(index));
+          });
+
+          // Start the automatic carousel
+          this.startAutoPlay();
+        }
+
+        moveImages() {
+          this.images.forEach((img, index) => {
+            // Calculate new position index
+            const positionIndex =
+              (index - this.currentIndex + this.totalItems) % this.totalItems;
+            const position = this.positions[positionIndex];
+
+            // Clear previous position styles
+            img.style.top = "";
+            img.style.right = "";
+            img.style.bottom = "";
+            img.style.left = "";
+
+            // Apply new position
+            Object.keys(position).forEach((key) => {
+              img.style[key] = position[key];
+            });
+
+            // Set active state for the image at the top position
+            img.classList.toggle("active", positionIndex === 0);
+          });
+        }
+
+        showReview(index) {
+          this.reviews.forEach((review, i) => {
+            review.classList.toggle("show", i === index);
+          });
+        }
+
+        goToSlide(index) {
+          this.currentIndex = index;
+          this.moveImages();
+          this.showReview(index);
+          this.startAutoPlay();
+        }
+
+        nextSlide() {
+          this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+          this.moveImages();
+          this.showReview(this.currentIndex);
+        }
+
+        startAutoPlay() {
+          if (this.slideInterval) clearInterval(this.slideInterval);
+          this.slideInterval = setInterval(() => {
+            this.nextSlide();
+          }, this.intervalDuration);
+        }
+      }
+
+      // Initialize the carousel when the DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        new CircularCarousel();
+      });
+    </script>
+  </body>
 </html>
