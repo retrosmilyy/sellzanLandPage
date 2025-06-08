@@ -1,11 +1,1 @@
-{
-"scripts": {
-  "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
-},
-
-
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.8",
-    "tailwindcss": "^4.1.8"
-  }
-}
+{"scripts":{"build:css":"npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"},"dependencies":{"@tailwindcss/cli":"^4.1.8","animate.css":"^4.1.1","aos":"^2.3.4","tailwindcss":"^4.1.8"}}
