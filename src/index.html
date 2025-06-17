@@ -411,89 +411,91 @@
   <body class="font-sans antialiased">
       <!-- Navigation Bar -->
     <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                
-            
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                        Sellzan
-                    </h1>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          
+        
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Sellzan
+            </h1>
+          </div>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Home</a>
-                    <a href="#features" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Features</a>
-                    <a href="#about" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">About</a>
-                    <a href="#contact" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Contact</a>
-                </div>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Home</a>
+            <a href="#features" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Features</a>
+            <a href="#about" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">About</a>
+            <a href="#contact" class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">Contact</a>
+          </div>
 
-                <!-- Mobile Menu Button -->
-                <button
-                    class="md:hidden p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-200"
-                    id="mobile-menu-btn"
-                    aria-label="Toggle mobile menu"
-                >
-                    <!-- Hamburger Icon -->
-                    <svg
-                        class="w-6 h-6 transition-transform duration-200"
-                        id="hamburger-icon"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"
-                        />
-                    </svg>
-                    
-                    <!-- Close Icon (Hidden by default) -->
-                    <svg
-                        class="w-6 h-6 hidden transition-transform duration-200"
-                        id="close-icon"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation Menu -->
-            <div 
-                class="md:hidden hidden transform transition-all duration-300 ease-in-out absolute sm:absolute w-[399px]" 
-                id="mobile-menu"
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-200"
+            id="mobile-menu-btn"
+            aria-label="Toggle mobile menu"
+          >
+            <!-- Hamburger Icon -->
+            <svg
+              class="w-6 h-6 transition-transform duration-200"
+              id="hamburger-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2 border border-gray-100">
-                    <a
-                        href="#home"
-                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-                    >Home</a>
-                    <a
-                        href="#features"
-                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-                    >Features</a>
-                    <a
-                        href="#about"
-                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-                    >About</a>
-                    <a
-                        href="#contact"
-                        class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-                    >Contact</a>
-                </div>
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            
+            <!-- Close Icon (Hidden by default) -->
+            <svg
+              class="w-6 h-6 hidden transition-transform duration-200"
+              id="close-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div 
+          class="md:hidden hidden transform transition-all duration-300 ease-in-out absolute left-0 right-0 w-full px-4" 
+          id="mobile-menu"
+        >
+          <div class="mx-auto max-w-md bg-white rounded-lg shadow-lg mt-2 border border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+              <a
+                href="#home"
+                class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >Home</a>
+              <a
+                href="#features"
+                class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >Features</a>
+              <a
+                href="#about"
+                class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >About</a>
+              <a
+                href="#contact"
+                class="block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
+              >Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
 
@@ -576,8 +578,7 @@
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20">
+  <section id="features" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center mb-16">
@@ -594,7 +595,7 @@
 
         <!-- Features Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Feature 1: Send Money -->
+          <!-- Feature 1: Escrow Payment System -->
           <div
             class="gradient-box-1 rounded-3xl p-8 card-hover group feature-card"
           >
@@ -611,25 +612,24 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                 />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-white mb-4">
-              Social Integrations
+              Escrow Payment System
             </h3>
             <p class="text-white/90 leading-relaxed mb-6">
-              Build your online presence with likes, comments, and followers, to
-              help grow your brand whileyou sell.
+              Secure transactions with money held safely until both parties confirm satisfaction.
             </p>
             <div
               class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
             >
-              Available in 50+ countries
+              100% Transaction Security
             </div>
           </div>
 
-          <!-- Feature 2: Multi-Currency -->
+          <!-- Feature 2: Social Media Integration -->
           <div
             class="gradient-box-2 rounded-3xl p-8 card-hover group feature-card"
           >
@@ -646,32 +646,31 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                 />
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-4">
-              Multi-Currency Wallet
-            </h3>
-            <p class="text-white/90 leading-relaxed mb-6">
-              Hold and exchange multiple currencies with real-time rates.
-              Complete transparency, no hidden fees.
-            </p>
-            <div
-              class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
-            >
-              25+ supported currencies
-            </div>
-          </div>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">
+                Social Media Integration
+              </h3>
+              <p class="text-white/90 leading-relaxed mb-6">
+                Enhance your business presence through seamless social media integration, building a stronger community of followers.
+              </p>
+              <div
+                class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
+              >
+                15+ Social Platforms
+              </div>
+              </div>
 
-          <!-- Feature 3: Security -->
-          <div
-            class="gradient-box-3 rounded-3xl p-8 card-hover group feature-card"
-          >
-            <div
-              class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
-            >
-              <svg
+              <!-- Feature 3: Live Selling -->
+              <div
+              class="gradient-box-3 rounded-3xl p-8 card-hover group feature-card"
+              >
+              <div
+                class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 icon-bounce"
+              >
+                <svg
                 class="w-8 h-8 text-white"
                 fill="none"
                 stroke="currentColor"
@@ -681,25 +680,24 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                 />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-white mb-4">
-              Bank-Level Security
+              Live Selling
             </h3>
             <p class="text-white/90 leading-relaxed mb-6">
-              Your money and data are protected with enterprise-grade security
-              and military-grade encryption.
+              Host interactive live streams to showcase products and engage customers in real-time.
             </p>
             <div
               class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
             >
-              ISO 27001 Certified
+              HD Streaming & Chat
             </div>
           </div>
 
-          <!-- Feature 4: Support -->
+          <!-- Feature 4: Analytics Dashboard -->
           <div
             class="gradient-box-4 rounded-3xl p-8 card-hover group feature-card"
           >
@@ -716,25 +714,24 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                 />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-white mb-4">
-              24/7 Expert Support
+              Analytics Dashboard
             </h3>
             <p class="text-white/90 leading-relaxed mb-6">
-              Get instant help from our dedicated support team through multiple
-              channels whenever you need it.
+              Track sales, customer behavior, and revenue with detailed insights for better decisions.
             </p>
             <div
               class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
             >
-              Average response: 30 seconds
+              Real-time Insights
             </div>
           </div>
 
-          <!-- Feature 5: Business -->
+          <!-- Feature 5: Discount Codes & Flash Sales -->
           <div
             class="gradient-box-5 rounded-3xl p-8 card-hover group feature-card"
           >
@@ -751,25 +748,24 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
                 />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-white mb-4">
-              Business Solutions
+              Discount Codes & Flash Sales
             </h3>
             <p class="text-white/90 leading-relaxed mb-6">
-              Scale your business globally with our comprehensive API, bulk
-              payments, and corporate accounts.
+              Create promotional campaigns with discount codes and time-limited flash sales.
             </p>
             <div
               class="inline-flex bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
             >
-              Enterprise-ready API
+              Smart Promotion Engine
             </div>
           </div>
 
-          <!-- Feature 6: Mobile -->
+          <!-- Feature 6: Trusted Delivery Service -->
           <div
             class="gradient-box-6 rounded-3xl p-8 card-hover group feature-card"
           >
@@ -786,21 +782,20 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 18h.01M8 21h8a1 1 0 001-1V4a1 1 0 00-1-1H8a1 1 0 00-1 1v16a1 1 0 001 1z"
+                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
                 />
               </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-700 mb-4">
-              Award-Winning App
+              Trusted Delivery Service
             </h3>
             <p class="text-gray-600 leading-relaxed mb-6">
-              Download our intuitive mobile app for iOS and Android. Manage your
-              finances on the go with ease.
+              Partner with verified logistics providers for reliable delivery with real-time tracking.
             </p>
             <div
               class="inline-flex bg-gray-700/20 text-gray-700 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
             >
-              4.9★ Store Rating
+              98% On-time Delivery
             </div>
           </div>
         </div>
